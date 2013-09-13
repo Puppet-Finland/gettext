@@ -22,6 +22,8 @@
 #
 class gettext {
 
+# Rationale for this is explained in init.pp of the sshd module
+if hiera('manage_gettext') != 'false' {
     include gettext::install
-
+}
 }
