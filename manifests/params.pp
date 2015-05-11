@@ -6,8 +6,14 @@
 class gettext::params {
 
     case $::osfamily {
-        default: {
+        'Debian': {
             $package_name = 'gettext'
-        } 
+        }
+        'RedHat': {
+            $package_name = 'gettext'
+        }
+        default: {
+            fail("Unsupported operating system ${::osfamily}")
+        }
     }
 }

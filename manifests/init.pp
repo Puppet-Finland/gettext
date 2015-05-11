@@ -5,7 +5,8 @@
 #
 # == Parameters
 #
-# None at the moment
+# [*manage*]
+#   Manage gettext using Puppet. Valid values are 'yes' (default) and 'no'.
 #
 # == Examples
 #
@@ -19,10 +20,13 @@
 #
 # BSD-license. See file LICENSE for details.
 #
-class gettext {
+class gettext
+(
+    $manage = 'yes'
+)
+{
 
-# Rationale for this is explained in init.pp of the sshd module
-if hiera('manage_gettext', 'true') != 'false' {
-    include gettext::install
+if $manage == 'yes' {
+    include ::gettext::install
 }
 }

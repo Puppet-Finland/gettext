@@ -1,0 +1,11 @@
+{
+  "name": "puppetfinland-gettext",
+  "version": "0.1.0",
+  "author": "Puppet-Finland team",
+  "license": "BSD license",
+  "summary": "Setup gettext",
+  "source": "https://github.com/Puppet-Finland/gettext.git",
+  "project_page": "https://github.com/Puppet-Finland/gettext",
+  "dependencies": [
+  ]
+}

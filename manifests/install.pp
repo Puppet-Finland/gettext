@@ -3,13 +3,11 @@
 #
 # Install gettext
 #
-class gettext::install {
-
-    include gettext::params
+class gettext::install inherits gettext::params {
 
     package { 'gettext-gettext':
-        name   => "${::gettext::params::package_name}",
         ensure => installed,
+        name   => $::gettext::params::package_name,
     }
 }
 
